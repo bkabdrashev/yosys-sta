@@ -215,7 +215,7 @@ opt -undriven -purge
 log "\[INFO\]: USING STRATEGY $strategy_name"
 
 # technology mapping for cells
-abc -D "$CLK_PERIOD_PS" \
+abc -exe yosys-abc -D "$CLK_PERIOD_PS" \
   -constr "$sdc_file" \
   {*}$LIBS {*}$EXCLUDE_CELLS \
   -script "$strategy_script" \
